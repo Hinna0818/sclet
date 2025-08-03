@@ -24,6 +24,7 @@
 #' @importFrom SingleCellExperiment reducedDim reducedDim<- reducedDimNames colData metadata<-
 #' @importFrom miloR Milo, buildGraph, makeNhoods, countCells, calcNhoodDistance, testNhoods, buildNhoodGraph
 #' @importFrom dplyr distinct
+#' @importFrom S4Vectors metadata
 #' @export
 #' 
 runMilo <- function(
@@ -76,12 +77,11 @@ runMilo <- function(
   
   milo <- miloR::buildNhoodGraph(milo)
   
-  metadata(sce)$milo_DA_results <- da_results
+  S4Vectors::metadata(sce)$milo_DA_results <- da_results
   
   return(list(
     sce = sce,
     milo = milo,
     da_results = da_results
   ))
-  
 }
