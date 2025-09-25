@@ -45,7 +45,9 @@ Suggests:
     ComplexHeatmap,
     S4Vectors,
     Seurat,
-    SuperCell
+    SuperCell,
+    miloR,
+    BiocParallel
 License: Artistic-2.0
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
